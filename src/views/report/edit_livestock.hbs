@@ -1,0 +1,46 @@
+
+<div class="col-md-8 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h2><center>Editar Reporte</center></h2>
+        </div>
+        <div class="card-body">
+            <h3><center>Inserta los datos necesarios para registrar un nuevo reporte</center></h3>
+            <form action="/report/livestock/edit-report/{{report._id}}?_method=put" method="post">
+                <input type="hidden" name="_method" value="put">
+                <div class="form-group">
+                    <input type="text" name="Departamento" class="form-control" placeholder="Departamento" value="{{report.Departamento}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Producto" class="form-control" placeholder="Tipo de producto" value="{{report.Producto}}">
+                </div>
+                <div class="form-group">
+                    <input type="date" name="Fecha" class="form-control" placeholder="Fecha de produccion" value="{{report.Fecha}}">
+                    <p></p>
+                    <p>Fecha Guardada: {{report.Fecha}}</p>
+                </div>
+                <div class="form-group">
+                    <input type="number" step="0.01" name="Precio" class="form-control" placeholder="Precio" value="{{report.Precio}}">
+                </div>
+                <div class="form-group">
+                    <input type="number" step="0.01" name="Volumen" class="form-control" placeholder="Volumen" value="{{report.Volumen}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Unidad_Volumen" class="form-control" placeholder="Unidad de Volúmen" value="{{report.Unidad_Volumen}}">
+                </div>
+                <div class="form-group">
+                    <input type="number" step="0.01" name="Variacion_Precio" class="form-control" placeholder="Variación de Precio (%)" value="{{report.Variacion_Precio}}">
+                </div>
+                <div class="form-group">
+                    <input type="number" step="0.01" name="Variacion_Volumen" class="form-control" placeholder="Variación de volúmen (%)" value="{{report.Variacion_Volumen}}">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Edit and save
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

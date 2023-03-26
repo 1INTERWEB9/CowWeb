@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+        <h3><center>Participación Departamental en la Producción y en el Área Cosechada</center></h3>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">PRODUCTO</th>
+                <th scope="col">DEPARTAMENTO</th>
+                <th scope="col">AÑO</th>
+                <th scope="col">AREA (ha)</th>
+                <th scope="col">PRODUCCION (ton)</th>
+                <th scope="col">RENDIMIENTO (ton/ha)</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                {{#each reports_farming}}
+                <tr>
+                    <th scope="row">{{Producto}}</th>
+                    <td>{{Departamento}}</td>
+                    <td>{{'Año'}}</td>
+                    <td>{{Area}}</td>
+                    <td>{{Produccion}}</td>
+                    <td>{{Rendimiento}}</td>
+                    <td><a href="farming/edit/{{_id}}"><i class="fas fa-edit"></i></a></td>
+                    <td><form action="/report/farming/delete/{{_id}}?_method=delete" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="btn" type="submit" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .25rem; --bs-btn-font-size: .90rem; --bs-btn-color: rgb(29, 138, 228);"><i class="fa-solid fa-xmark"></i></button>
+                    </form></td>
+                </tr>
+                {{else}}
+                <tr>
+                    <h3><center>No se encuentran participaciones registradas</center> </h3>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a href="/report/farming/add" class="btn btn-success btn-block">Registra una participación!</a>
+                        <p></p>
+                    </div>
+                    
+                </tr>
+                {{/each}}
+                
+            </tbody>
+            </table>
+
+            
+    </div>
+</div>
+
